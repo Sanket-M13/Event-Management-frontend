@@ -1,0 +1,128 @@
+/* Full Wrapper */
+.contact-wrapper {
+  display: flex;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #0f172a, #1e293b);
+  padding-top: 100px; /* Avoid Navbar Overlap */
+  color: #fff;
+  padding-left: 40px;
+  padding-right: 40px;
+}
+
+/* LEFT SIDE */
+.contact-left {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  padding: 40px;
+}
+
+.contact-left-content {
+  max-width: 400px;
+}
+
+.contact-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #a5b4fc;
+}
+
+.contact-desc {
+  opacity: 0.8;
+  margin-bottom: 25px;
+}
+
+.contact-info-box {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+  margin-bottom: 25px;
+}
+
+.icon {
+  font-size: 28px;
+  color: #ec4899;
+}
+
+.contact-info-box h4 {
+  margin: 0;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.contact-info-box a {
+  color: #a5b4fc;
+  text-decoration: none;
+}
+
+.contact-info-box a:hover {
+  text-decoration: underline;
+}
+
+/* RIGHT SIDE */
+.contact-right {
+  flex: 1.3;
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(12px);
+  border-radius: 20px;
+  padding: 50px;
+  margin: 40px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+.form-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 30px;
+}
+
+/* Form */
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  margin-bottom: 18px;
+  padding: 12px;
+  background: #0f172a;
+  border: 1px solid #374151;
+  border-radius: 10px;
+  color: #fff;
+  outline: none;
+  transition: 0.3s ease;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: #6366f1;
+  box-shadow: 0 0 10px rgba(99, 102, 241, 0.5);
+}
+
+/* Two Inputs in Row */
+.contact-form .row {
+  display: flex;
+  gap: 15px;
+}
+
+.contact-form .row .col {
+  flex: 1;
+}
+
+/* Button */
+.send-btn {
+  width: 100%;
+  padding: 14px;
+  margin-top: 10px;
+  border: none;
+  border-radius: 50px;
+  background: linear-gradient(90deg, #6366f1, #ec4899);
+  color: #fff;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.send-btn:hover {
+  filter: brightness(1.1);
+  transform: translateY(-2px);
+}

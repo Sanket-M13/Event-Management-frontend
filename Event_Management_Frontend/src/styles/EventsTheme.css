@@ -1,0 +1,59 @@
+/* ===== Global Theme Matching Homepage ===== */
+body {
+  background-color: #0f172a;
+  color: #f8fafc;
+  font-family: "Poppins", sans-serif;
+}
+
+/* ===== Page Title ===== */
+.events-title {
+  font-weight: 800;
+  background: linear-gradient(to right, #fff, #a5b4fc);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* ===== Event Cards ===== */
+.event-card-theme {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  backdrop-filter: blur(10px);
+  transition: all 0.4s ease;
+  overflow: hidden;
+}
+
+.event-card-theme:hover {
+  transform: translateY(-8px);
+  background: rgba(255, 255, 255, 0.1);
+  border-color: #6366f1;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+/* ===== Image Placeholder ===== */
+.event-img-box {
+  height: 180px;
+  background: #1e293b;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  color: #94a3b8;
+  font-size: 14px;
+}
+
+/* ===== Gradient Button ===== */
+.btn-gradient {
+  background: linear-gradient(90deg, #6366f1, #ec4899);
+  border: none;
+  color: white;
+  font-weight: 600;
+  padding: 10px;
+  border-radius: 10px;
+  transition: 0.3s ease-in-out;
+}
+
+.btn-gradient:hover {
+  filter: brightness(1.15);
+  transform: translateY(-2px);
+}

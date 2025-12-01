@@ -1,0 +1,16 @@
+.event-details-card {
+  max-width: 600px;
+  margin: auto;
+}
+
+.event-details-image {
+  height: 250px;
+  background: #e9ecef;
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 22px;
+  color: #6c757d;
+  font-weight: bold;
+}
