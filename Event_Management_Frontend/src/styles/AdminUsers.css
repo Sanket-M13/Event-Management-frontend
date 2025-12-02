@@ -1,0 +1,114 @@
+/* MAIN CONTAINER */
+.admin-users-wrapper {
+  margin-top: 120px;
+  color: #f8fafc;
+}
+
+/* TITLE */
+.admin-users-title {
+  font-weight: 800;
+  font-size: 32px;
+  margin-bottom: 20px;
+  background: linear-gradient(to right, #fff, #a5b4fc);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* TABLE STYLING */
+.table-custom {
+  background: rgba(255, 255, 255, 0.05);
+  color: white;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.table-custom thead {
+  background: rgba(255, 255, 255, 0.1);
+  color: #e2e8f0;
+}
+
+.table-custom tbody tr:hover {
+  background: rgba(255, 255, 255, 0.12);
+  transition: 0.3s ease;
+}
+
+/* BUTTONS */
+.btn-edit {
+  background: #facc15;
+  border: none;
+  color: #000;
+  font-weight: 600;
+}
+
+.btn-edit:hover {
+  background: #eab308;
+  color: #000;
+}
+
+.btn-delete {
+  background: #ef4444;
+  border: none;
+  font-weight: 600;
+}
+
+.btn-delete:hover {
+  background: #dc2626;
+}
+
+/* DISABLED BUTTON */
+.btn-delete:disabled {
+  background: gray !important;
+  opacity: 0.7;
+}
+
+/* MODAL */
+.modal-content {
+  background: #1e293b;
+  color: white;
+  border-radius: 12px;
+}
+
+.modal-header {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.modal-title {
+  font-weight: 700;
+}
+
+.modal-footer {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* INPUTS IN MODAL */
+.modal-content input,
+.modal-content select {
+  background: rgba(255, 255, 255, 0.8) !important;
+  border: 1px solid rgba(0, 0, 0, 0.3) !important;
+  color: #000 !important;
+}
+
+.modal-content input::placeholder {
+  color: rgba(0, 0, 0, 0.55);
+}
+
+/* SAVE BUTTON */
+.btn-save {
+  background: #22c55e !important;
+  border: none;
+  font-weight: 600;
+}
+
+.btn-save:hover {
+  background: #16a34a !important;
+}
+
+/* CANCEL BUTTON */
+.btn-cancel {
+  background: #475569 !important;
+  border: none;
+}
+
+.btn-cancel:hover {
+  background: #334155 !important;
+}

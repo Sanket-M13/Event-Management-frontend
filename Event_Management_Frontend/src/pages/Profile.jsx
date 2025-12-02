@@ -31,19 +31,16 @@ const Profile = () => {
     loadProfile();
   }, []);
 
-  // Update form inputs
   const handleChange = (e) => {
     setProfile({ ...profile, [e.target.name]: e.target.value });
   };
 
-  // Save profile changes
   const saveProfile = async () => {
     try {
       await api.patch(`/user/${userId}`, profile);
       alert("Profile updated successfully!");
       setShowEdit(false);
 
-      // Update localStorage so navbar shows updated name
       localStorage.setItem("userName", profile.firstName);
       localStorage.setItem("lastName", profile.lastName);
       localStorage.setItem("email", profile.emailId);
@@ -70,7 +67,6 @@ const Profile = () => {
         </Button>
       </Card>
 
-      {/* Edit Profile Modal */}
       <Modal show={showEdit} onHide={() => setShowEdit(false)} centered>
         <Modal.Header closeButton>
           <Modal.Title>Edit Profile</Modal.Title>

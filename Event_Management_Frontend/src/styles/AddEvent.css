@@ -1,0 +1,73 @@
+.add-event-wrapper {
+  margin-top: 120px !important;   /* fixes navbar overlap */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 50px;
+}
+
+.glass-card-add {
+  background: rgba(255, 255, 255, 0.904);
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  width: 60%;
+}
+
+.add-event-title {
+  font-weight: 800;
+  background: linear-gradient(to right, #fff, #3654ec);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.error-text {
+  font-size: 13px;
+  color: #ff6b6b;
+  margin-top: 3px;
+}
+
+/* Make all text inside inputs BLACK */
+.add-event-form .form-control,
+.add-event-form input,
+.add-event-form textarea,
+.add-event-form select {
+  color: #000 !important;
+  background-color: rgba(0, 0, 0, 0.9) !important;
+  border: 1px solid rgba(0, 0, 0, 0.3) !important;
+}
+
+/* FULLY VISIBLE PLACEHOLDER */
+.add-event-form input::placeholder,
+.add-event-form textarea::placeholder,
+.add-event-form select::placeholder {
+  color: rgba(0, 0, 0, 0.55) !important;
+  opacity: 1 !important;
+}
+
+
+
+
+/* Fix for Microsoft Edge */
+.add-event-form input:-ms-input-placeholder,
+.add-event-form textarea:-ms-input-placeholder {
+  color: rgb(255, 242, 242) !important;
+}
+
+
+/* FIX LABEL TEXT COLOR */
+.add-event-form label,
+.add-event-form .form-label {
+  color: #c50000 !important;      /* bright white */
+  font-weight: 600 !important;
+  letter-spacing: 0.3px;
+}
+
+/* 🔥 Force all labels inside Add Event form to be PURE WHITE */
+.add-event-form label,
+.add-event-form .form-label {
+    color: #ffffff !important;
+    font-weight: 600 !important;
+    z-index: 999 !important;
+    position: relative !important;
+}

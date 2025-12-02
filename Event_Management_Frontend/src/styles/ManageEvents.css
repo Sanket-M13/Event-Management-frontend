@@ -1,0 +1,74 @@
+/* PAGE WRAPPER */
+.manage-wrapper {
+  margin-top: 120px !important; /* Fix navbar overlap */
+  padding-bottom: 40px;
+  width: 65%;
+  color: #f8fafc;
+}
+
+/* PAGE TITLE */
+.manage-title {
+  font-weight: 800;
+  text-align: center;
+  margin-bottom: 30px;
+  background: linear-gradient(to right, #fff, #a5b4fc);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* CARD STYLING */
+.manage-card {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 16px;
+  padding: 20px;
+  margin-bottom: 20px;
+  backdrop-filter: blur(12px);
+  transition: 0.3s ease-in-out;
+}
+
+/* Hover effect */
+.manage-card:hover {
+  transform: translateY(-6px);
+  background: rgba(255, 255, 255, 0.12);
+  border-color: #6366f1;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+}
+
+/* EVENT TITLE */
+.event-title {
+  font-size: 20px;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+/* CITY TEXT */
+.event-city {
+  color: #cbd5e1;
+  margin-bottom: 15px;
+}
+
+/* BUTTON ROW */
+.button-row {
+  display: flex;
+  gap: 10px;
+}
+
+/* EDIT BUTTON */
+.btn-edit {
+  font-weight: 600;
+  color: #1e293b !important;
+}
+
+/* DELETE BUTTON */
+.btn-delete {
+  font-weight: 600;
+}
+
+/* EMPTY MESSAGE */
+.no-events {
+  text-align: center;
+  margin-top: 40px;
+  font-size: 18px;
+  opacity: 0.7;
+}

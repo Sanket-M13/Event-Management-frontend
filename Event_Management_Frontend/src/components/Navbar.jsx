@@ -23,7 +23,6 @@ const AppNavbar = () => {
     >
       <Container>
 
-        {/* Brand Logo */}
         <Navbar.Brand as={Link} to="/" className="fw-bold text-white">
           📅 Event Hub
         </Navbar.Brand>
@@ -32,7 +31,6 @@ const AppNavbar = () => {
 
         <Navbar.Collapse>
 
-          {/* Left Links */}
           <Nav className="me-auto ms-3">
             <Nav.Link as={Link} to="/" className="nav-link-custom">Home</Nav.Link>
             <Nav.Link as={Link} to="/events" className="nav-link-custom">Events</Nav.Link>
@@ -40,7 +38,6 @@ const AppNavbar = () => {
             <Nav.Link as={Link} to="/contact" className="nav-link-custom">Contact</Nav.Link>
           </Nav>
 
-          {/* Admin Panel */}
           {role === "ROLE_ADMIN" && (
             <Nav className="me-3">
               <Nav.Link as={Link} to="/admin/users" className="nav-link-custom">Users</Nav.Link>
@@ -49,7 +46,6 @@ const AppNavbar = () => {
             </Nav>
           )}
 
-          {/* Organizer Panel */}
           {isLoggedIn && role === "ROLE_MANAGER" && (
             <Nav className="me-3">
               <NavDropdown
@@ -70,7 +66,6 @@ const AppNavbar = () => {
             </Nav>
           )}
 
-          {/* RIGHT SIDE */}
           {!isLoggedIn ? (
             <div className="d-flex gap-2">
               <Button as={Link} to="/login" variant="outline-light">

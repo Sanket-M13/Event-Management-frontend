@@ -1,0 +1,74 @@
+/* FIX NAVBAR OVERLAP */
+.event-reg-wrapper {
+  margin-top: 120px !important;
+  width: 70%;
+  color: #f8fafc;
+  padding-bottom: 50px;
+}
+
+/* PAGE TITLE */
+.event-reg-title {
+  font-weight: 800;
+  text-align: center;
+  margin-bottom: 25px;
+  background: linear-gradient(to right, #fff, #a5b4fc);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* GLASS CARD WRAPPER */
+.event-reg-card {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 14px;
+  padding: 25px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(12px);
+}
+
+/* ENTIRE EVENT CANCEL BUTTON */
+.btn-cancel-event {
+  background: #dc3545 !important;
+  border: none;
+  font-weight: 600;
+  padding: 10px 16px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+}
+
+.btn-cancel-event:hover {
+  filter: brightness(1.1);
+}
+
+/* NO REGISTRATIONS */
+.no-attendees {
+  padding: 20px;
+  text-align: center;
+  font-size: 17px;
+  opacity: 0.8;
+}
+
+/* DARK TABLE */
+.event-table {
+  background: rgba(30, 41, 59, 0.7);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.event-table thead {
+  background: rgba(148, 163, 184, 0.15);
+  color: #f8fafc;
+}
+
+.event-table tbody tr {
+  color: #e2e8f0;
+}
+
+.event-table tbody tr:hover {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+/* CANCEL BUTTON IN TABLE */
+.btn-cancel-user {
+  font-weight: 600;
+  border-radius: 8px;
+}

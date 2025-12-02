@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
-import { Container, Row, Col, Card, Button, Badge } from "react-bootstrap";
+import { Container, Row, Col, Card, Button } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 import { api } from "../api/axiosConfig";
-import "../styles/EventsTheme.css";   // <-- external CSS
+import "../styles/EventsTheme.css";
 
 const Events = () => {
   const [events, setEvents] = useState([]);
@@ -11,6 +11,7 @@ const Events = () => {
   const loadEvents = async () => {
     try {
       const response = await api.get("/user/listEvents");
+      console.log(response.data);
       setEvents(response.data);
     } catch (err) {
       console.error("Error loading events:", err);
@@ -21,31 +22,31 @@ const Events = () => {
     loadEvents();
   }, []);
 
+  // Fallback image (if categoryImage is null or missing)
+  const DEFAULT_IMAGE =
+    "https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?q=80&w=1200";
+
   return (
     <Container className="pt-5 mt-5">
       <h2 className="text-center mb-5 events-title">Upcoming Events</h2>
 
       <Row>
-        {events.map((event, index) => (
-          <Col key={index} md={4} className="mb-4">
-
+        {events.map((event) => (
+          <Col key={event.id} md={4} className="mb-4">
             <Card
               className="event-card-theme"
-              style={{ cursor: "pointer" }}
               onClick={() => navigate(`/events/${event.id}`)}
             >
               <div className="event-img-box">
-                <span>No Image</span>
+                <img
+                  src={event.categoryImage}
+                  alt={event.title}
+                />
               </div>
 
               <Card.Body>
-                <Badge bg="primary" className="mb-2">LIVE</Badge>
-
-                <Card.Title className="fw-bold text-white">
-                  {event.title}
-                </Card.Title>
-
-                <Card.Text className="text-light opacity-75">
+                <Card.Title className="fw-bold">{event.title}</Card.Title>
+                <Card.Text>
                   <strong>City:</strong> {event.city} <br />
                   <strong>Price:</strong> ₹{event.price} <br />
                   <strong>Date:</strong> {new Date(event.startOn).toLocaleDateString()}

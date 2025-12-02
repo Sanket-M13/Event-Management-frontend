@@ -35,14 +35,13 @@ const MyEvents = () => {
     loadAll();
   }, []);
 
-  // Cancel registration for upcoming events
   const cancelRegistration = async (eventId) => {
     if (!window.confirm("Cancel registration for this event?")) return;
 
     try {
       await api.patch(`/user/${userId}/events/${eventId}/register`);
       alert("Registration cancelled!");
-      loadUpcoming(); // refresh the list
+      loadUpcoming(); 
     } catch (err) {
       console.error(err);
       alert("Failed to cancel registration");
@@ -55,7 +54,6 @@ const MyEvents = () => {
 
       <Tabs defaultActiveKey="upcoming" className="mb-3">
 
-        {/* UPCOMING EVENTS */}
         <Tab eventKey="upcoming" title="Upcoming Events">
           {upcoming.length === 0 ? (
             <p>No upcoming events registered.</p>
@@ -83,7 +81,6 @@ const MyEvents = () => {
           )}
         </Tab>
 
-        {/* COMPLETED EVENTS */}
         <Tab eventKey="completed" title="Completed Events">
           {completed.length === 0 ? (
             <p>No completed events.</p>

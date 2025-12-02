@@ -5,7 +5,6 @@ export default function ContactUs() {
   return (
     <div className="contact-wrapper">
 
-      {/* LEFT SECTION */}
       <div className="contact-left">
         <div className="contact-left-content">
 
@@ -43,7 +42,6 @@ export default function ContactUs() {
         </div>
       </div>
 
-      {/* RIGHT SECTION */}
       <div className="contact-right">
         <h2 className="form-title">Send Us A Message</h2>
 

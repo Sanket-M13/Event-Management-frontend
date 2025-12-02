@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import { Container, Card, Button } from "react-bootstrap";
-import { useNavigate } from "react-router-dom";
 import { api } from "../api/axiosConfig";
 import "./EventDetails.css";
 
@@ -13,6 +12,7 @@ const EventDetails = () => {
   const loadEvent = async () => {
     try {
       const response = await api.get(`/user/event/${id}`);
+      console.log("Event Details:", response.data);
       setEvent(response.data);
     } catch (error) {
       console.error("Error loading event details:", error);
@@ -25,69 +25,37 @@ const EventDetails = () => {
 
   if (!event) return <h3 className="text-center mt-5">Loading...</h3>;
 
-  return (
-    <Container className="mt-5">
-      <Card className="shadow-lg p-4 event-details-card">
+  const imageUrl = event.categoryImage
+    ? event.categoryImage
+    : "/event-images/default.jpg";
 
-        {/* Image Placeholder */}
-        <div className="event-details-image">
-          <span>No Image</span>
+  return (
+    <Container className="mt-5 pt-5">
+      <Card className="event-details-card shadow-lg p-4">
+
+        <div className="event-details-image-wrapper">
+          <img
+            src={imageUrl}
+            className="event-details-image"
+            alt={event.title}
+          />
         </div>
 
-        {/* TITLE */}
-        <h2 className="fw-bold mt-3">{event.title}</h2>
+        <h2 className="fw-bold mt-3 event-title-text">{event.title}</h2>
 
-        {/* ORGANIZATION */}
-        <p className="text-muted">
-          <strong>Organization:</strong> {event.organization}
-        </p>
-
-        {/* DESCRIPTION */}
-        <p className="text-muted">
-          <strong>Description:</strong> {event.description}
-        </p>
-
-        {/* CITY */}
-        <p className="text-muted">
-          <strong>City:</strong> {event.city}
-        </p>
-
-        {/* VENUE */}
-        <p className="text-muted">
-          <strong>Venue:</strong> {event.venue}
-        </p>
-
-        {/* START DATE */}
-        <p className="text-muted">
-          <strong>Start Date:</strong>{" "}
-          {new Date(event.startOn).toLocaleString()}
-        </p>
-
-        {/* END DATE */}
-        <p className="text-muted">
-          <strong>End Date:</strong>{" "}
-          {new Date(event.endOn).toLocaleString()}
-        </p>
-
-        {/* CAPACITY */}
-        <p className="text-muted">
-          <strong>Capacity:</strong> {event.capacity}
-        </p>
-
-        {/* PRICE */}
-        <p className="text-muted">
-          <strong>Price:</strong> ₹{event.price}
-        </p>
-
-        {/* CATEGORY */}
-        <p className="text-muted">
-          <strong>Category:</strong> {event.categoryName}
-        </p>
+        <p><strong>Organization:</strong> {event.organization}</p>
+        <p><strong>Description:</strong> {event.description}</p>
+        <p><strong>City:</strong> {event.city}</p>
+        <p><strong>Venue:</strong> {event.venue}</p>
+        <p><strong>Start Date:</strong> {new Date(event.startOn).toLocaleString()}</p>
+        <p><strong>End Date:</strong> {new Date(event.endOn).toLocaleString()}</p>
+        <p><strong>Capacity:</strong> {event.capacity}</p>
+        <p><strong>Price:</strong> ₹{event.price}</p>
+        <p><strong>Category:</strong> {event.categoryName}</p>
 
         <Button
-          variant="success"
+          className="btn-gradient w-100 mt-3"
           size="lg"
-          className="mt-3 w-100"
           onClick={() => navigate(`/events/${event.id}/register`)}
         >
           Register for Event

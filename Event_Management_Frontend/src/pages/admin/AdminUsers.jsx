@@ -1,41 +1,55 @@
 import { useEffect, useState } from "react";
 import { Table, Button, Container, Modal, Form } from "react-bootstrap";
 import { api } from "../../api/axiosConfig";
+import "../../styles/AdminUsers.css"; // <-- IMPORT CSS
 
 const AdminUsers = () => {
   const [users, setUsers] = useState([]);
   const [showEdit, setShowEdit] = useState(false);
   const [selectedUser, setSelectedUser] = useState(null);
 
+  // Load All Users
   const loadUsers = async () => {
-    const resp = await api.get("/admin/users");
-    setUsers(resp.data);
+    try {
+      const resp = await api.get("/admin/users");
+      setUsers(resp.data);
+    } catch (err) {
+      console.error("Error loading users", err);
+    }
   };
 
   useEffect(() => {
     loadUsers();
   }, []);
 
+  // Deactivate User
   const deactivateUser = async (id) => {
     if (!window.confirm("Deactivate this user?")) return;
 
-    await api.patch(`/admin/users/${id}/deactivate`);
-    loadUsers();
+    try {
+      await api.patch(`/admin/users/${id}/deactivate`);
+      loadUsers();
+    } catch (err) {
+      console.error(err);
+      alert("Failed to deactivate user");
+    }
   };
 
+  // Open Edit Modal
   const openEditModal = (user) => {
-    setSelectedUser({ ...user }); // clone user data
+    setSelectedUser({ ...user });
     setShowEdit(true);
   };
 
+  // Update fields in modal
   const handleEditChange = (e) => {
     setSelectedUser({ ...selectedUser, [e.target.name]: e.target.value });
   };
 
+  // Save Updated User
   const saveUser = async () => {
     try {
       await api.put(`/admin/users/${selectedUser.id}`, selectedUser);
-
       alert("User updated successfully!");
       setShowEdit(false);
       loadUsers();
@@ -46,10 +60,11 @@ const AdminUsers = () => {
   };
 
   return (
-    <Container className="mt-4 pt-6 pb-3">
-      <h2 className="fw-bold mb-3">All Users</h2>
+    <Container className="admin-users-wrapper">
 
-      <Table striped bordered hover>
+      <h2 className="admin-users-title">All Users</h2>
+
+      <Table striped bordered hover className="table-custom">
         <thead>
           <tr>
             <th>ID</th>
@@ -71,12 +86,17 @@ const AdminUsers = () => {
               <td>{u.active ? "Yes" : "No"}</td>
 
               <td className="d-flex gap-2">
-                <Button variant="warning" onClick={() => openEditModal(u)}>
+                {/* Edit Button */}
+                <Button
+                  className="btn-edit"
+                  onClick={() => openEditModal(u)}
+                >
                   Edit
                 </Button>
 
+                {/* Deactivate Button */}
                 <Button
-                  variant="danger"
+                  className="btn-delete"
                   onClick={() => deactivateUser(u.id)}
                   disabled={!u.active}
                 >
@@ -159,10 +179,11 @@ const AdminUsers = () => {
         </Modal.Body>
 
         <Modal.Footer>
-          <Button variant="secondary" onClick={() => setShowEdit(false)}>
+          <Button className="btn-cancel" onClick={() => setShowEdit(false)}>
             Cancel
           </Button>
-          <Button variant="success" onClick={saveUser}>
+
+          <Button className="btn-save" onClick={saveUser}>
             Save Changes
           </Button>
         </Modal.Footer>

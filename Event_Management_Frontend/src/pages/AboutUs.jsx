@@ -26,7 +26,6 @@ export default function AboutUs() {
   return (
     <div className="container py-5">
 
-      {/* TOP HEADING */}
       <h1 className="text-center fw-bold mb-4">About EventHub</h1>
 
       <p className="text-center fs-5 mb-5 text-secondary">
@@ -35,7 +34,6 @@ export default function AboutUs() {
         our platform brings everything together in one place.
       </p>
 
-      {/* MISSION SECTION */}
       <div className="row align-items-center mb-5">
 
         <div className="col-md-6 mb-4">

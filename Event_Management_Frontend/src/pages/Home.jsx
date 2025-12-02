@@ -61,16 +61,13 @@ const Home = () => {
       <style>{styles}</style>
 
       <div className="pt-5">
-        {/* Background Blobs */}
         <div className="hero-blob" style={{ top: "-10%", right: "-10%" }}></div>
         <div className="hero-blob" style={{ bottom: "10%", left: "-10%", background: "#3b82f6" }}></div>
 
-        {/* HERO SECTION */}
         <div className="hero-section d-flex align-items-center">
           <Container>
             <Row className="align-items-center gy-5">
 
-              {/* LEFT SIDE */}
               <Col lg={7}>
                 <Badge className="border border-white text-white mb-3 px-3 py-2 rounded-pill">
                   🚀 The #1 Platform for Event Management
@@ -88,14 +85,10 @@ const Home = () => {
                   <Button className="btn-gradient" size="lg" href="/events">
                     Explore Events <ArrowRight size={20} className="ms-2" />
                   </Button>
-
-                  <Button className="btn-outline-glow" size="lg">
-                    Create Event
-                  </Button>
+                  
                 </div>
               </Col>
 
-              {/* RIGHT SIDE IMAGE CARD */}
               <Col lg={5}>
                 <Card className="bg-dark text-white border-0 shadow-lg p-3">
                   <Card.Img 

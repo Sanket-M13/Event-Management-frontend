@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import { Container, Table, Button, Spinner } from "react-bootstrap";
 import { useParams } from "react-router-dom";
 import { api } from "../api/axiosConfig";
+import "../styles/EventRegistration.css";
+
 
 const ViewEventRegistrations = () => {
   const { eventId } = useParams();
@@ -53,21 +55,25 @@ const ViewEventRegistrations = () => {
     loadRegistrations();
   }, []);
 
-  return (
-    <Container className="mt-4">
-      <h2>Event Registrations</h2>
-      <p>Event ID: {eventId}</p>
+ return (
+  <Container className="event-reg-wrapper">
 
-      <Button variant="danger" className="mb-3" onClick={cancelEvent}>
+    <h2 className="event-reg-title">Event Registrations</h2>
+
+    <div className="event-reg-card">
+
+      <p><strong>Event ID:</strong> {eventId}</p>
+
+      <Button className="btn-cancel-event" onClick={cancelEvent}>
         Cancel Entire Event
       </Button>
 
       {loading ? (
         <Spinner animation="border" />
       ) : registrations.length === 0 ? (
-        <p>No attendees registered for this event.</p>
+        <p className="no-attendees">No attendees registered for this event.</p>
       ) : (
-        <Table striped bordered hover>
+        <Table striped bordered hover className="event-table">
           <thead>
             <tr>
               <th>Attendee ID</th>
@@ -88,6 +94,7 @@ const ViewEventRegistrations = () => {
                 <td>
                   <Button
                     variant="warning"
+                    className="btn-cancel-user"
                     onClick={() => cancelUserRegistration(attendee.id)}
                   >
                     Cancel Registration
@@ -98,8 +105,11 @@ const ViewEventRegistrations = () => {
           </tbody>
         </Table>
       )}
-    </Container>
-  );
+
+    </div>
+
+  </Container>
+);
 };
 
 export default ViewEventRegistrations;
