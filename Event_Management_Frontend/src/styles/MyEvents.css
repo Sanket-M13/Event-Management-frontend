@@ -1,0 +1,35 @@
+.my-events-page {
+  padding-top: 110px;
+  padding-bottom: 40px;
+}
+
+.my-events-page h2 {
+  color: #fff;
+}
+
+.my-events-page .nav-tabs .nav-link {
+  color: #cbd5e1;
+  font-weight: 600;
+}
+
+.my-events-page .nav-tabs .nav-link.active {
+  background-color: #1e293b;
+  color: #fff;
+  border-color: #475569 #475569 #1e293b;
+}
+
+.my-events-page .card {
+  background-color: #1e293b;
+  border: 1px solid #334155;
+  color: #f8fafc;
+}
+
+.my-events-page .card strong {
+  color: #a5b4fc;
+}
+
+.my-events-page .btn-danger {
+  background-color: #dc3545;
+  border: none;
+  padding: 10px;
+}

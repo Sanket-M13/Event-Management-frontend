@@ -19,10 +19,10 @@ const Events = () => {
   };
 
   useEffect(() => {
+    
     loadEvents();
   }, []);
 
-  // Fallback image (if categoryImage is null or missing)
   const DEFAULT_IMAGE =
     "https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?q=80&w=1200";
 

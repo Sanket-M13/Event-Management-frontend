@@ -107,7 +107,7 @@ const AddEvent = () => {
             {errors.organization && <p className="error-text">{errors.organization}</p>}
           </Form.Group>
 
-=          <Form.Group className="mb-3">
+          <Form.Group className="mb-3">
             <Form.Label>Description</Form.Label>
             <Form.Control
               as="textarea"

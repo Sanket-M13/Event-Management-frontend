@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Container, Card, Button, Modal, Form } from "react-bootstrap";
 import { api } from "../api/axiosConfig";
+import "../styles/Profile.css";
 
 const Profile = () => {
   const userId = localStorage.getItem("userId");
@@ -53,7 +54,7 @@ const Profile = () => {
   };
 
   return (
-    <Container className="mt-5">
+    <Container className="profile-page mt-5">
       <Card className="p-4 shadow-sm" style={{ maxWidth: "600px", margin: "0 auto" }}>
         <h3 className="mb-4 text-center">My Profile</h3>
 

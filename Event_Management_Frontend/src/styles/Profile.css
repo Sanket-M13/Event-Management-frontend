@@ -1,0 +1,42 @@
+.profile-page {
+  padding-top: 120px;
+  padding-bottom: 50px;
+  color: #fff;
+}
+
+.profile-page .card {
+  background-color: #1e293b;
+  border: 1px solid #334155;
+  color: #f8fafc;
+  border-radius: 14px;
+}
+
+.profile-page strong {
+  color: #a5b4fc;
+}
+
+.profile-page .btn-primary {
+  background-color: #6366f1;
+  border: none;
+}
+
+.profile-page .btn-primary:hover {
+  filter: brightness(1.15);
+}
+
+.profile-page .modal-content {
+  background-color: #1e293b;
+  color: #f8fafc;
+  border: 1px solid #334155;
+}
+
+.profile-page .form-control {
+  background-color: #0f172a;
+  color: #fff;
+  border: 1px solid #475569;
+}
+
+.profile-page .form-control:focus {
+  border-color: #6366f1;
+  box-shadow: 0 0 0 0.25rem rgba(99, 102, 241, 0.25);
+}

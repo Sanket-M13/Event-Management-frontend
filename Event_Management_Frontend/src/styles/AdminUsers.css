@@ -1,10 +1,8 @@
-/* MAIN CONTAINER */
 .admin-users-wrapper {
   margin-top: 120px;
   color: #f8fafc;
 }
 
-/* TITLE */
 .admin-users-title {
   font-weight: 800;
   font-size: 32px;
@@ -14,7 +12,6 @@
   -webkit-text-fill-color: transparent;
 }
 
-/* TABLE STYLING */
 .table-custom {
   background: rgba(255, 255, 255, 0.05);
   color: white;
@@ -32,7 +29,6 @@
   transition: 0.3s ease;
 }
 
-/* BUTTONS */
 .btn-edit {
   background: #facc15;
   border: none;
@@ -55,13 +51,11 @@
   background: #dc2626;
 }
 
-/* DISABLED BUTTON */
 .btn-delete:disabled {
   background: gray !important;
   opacity: 0.7;
 }
 
-/* MODAL */
 .modal-content {
   background: #1e293b;
   color: white;
@@ -80,7 +74,7 @@
   border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-/* INPUTS IN MODAL */
+
 .modal-content input,
 .modal-content select {
   background: rgba(255, 255, 255, 0.8) !important;
@@ -92,7 +86,6 @@
   color: rgba(0, 0, 0, 0.55);
 }
 
-/* SAVE BUTTON */
 .btn-save {
   background: #22c55e !important;
   border: none;
@@ -103,7 +96,6 @@
   background: #16a34a !important;
 }
 
-/* CANCEL BUTTON */
 .btn-cancel {
   background: #475569 !important;
   border: none;

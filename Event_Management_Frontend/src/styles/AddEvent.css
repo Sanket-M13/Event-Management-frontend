@@ -1,5 +1,5 @@
 .add-event-wrapper {
-  margin-top: 120px !important;   /* fixes navbar overlap */
+  margin-top: 120px !important;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -7,18 +7,47 @@
 }
 
 .glass-card-add {
-  background: rgba(255, 255, 255, 0.904);
+  background: rgba(255, 255, 255, 0.12);
   border-radius: 16px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(12px);
   width: 60%;
+  padding: 40px;
+  color: #fff;
 }
 
 .add-event-title {
   font-weight: 800;
-  background: linear-gradient(to right, #fff, #3654ec);
+  font-size: 30px;
+  text-align: center;
+  margin-bottom: 25px;
+  background: linear-gradient(to right, #ffffff, #8aa8ff);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+}
+
+.add-event-form .form-label {
+  color: #e4e8ff !important;
+  font-weight: 600;
+  margin-bottom: 6px;
+  letter-spacing: 0.3px;
+}
+
+.add-event-form input.form-control:focus,
+.add-event-form textarea.form-control:focus,
+.add-event-form select.form-control:focus,
+.glass-card-add .form-control:focus {
+    color: #ffffff !important;
+    background-color: rgba(255, 255, 255, 0.007) !important;
+    border: 1px solid #6c8bff !important;
+    box-shadow: 0 0 8px rgba(108, 139, 255, 0.4) !important;
+}
+
+
+.add-event-form input::placeholder,
+.add-event-form textarea::placeholder,
+.add-event-form select::placeholder {
+  color: rgba(255, 255, 255, 0.65) !important;
 }
 
 .error-text {
@@ -27,47 +56,15 @@
   margin-top: 3px;
 }
 
-/* Make all text inside inputs BLACK */
-.add-event-form .form-control,
-.add-event-form input,
-.add-event-form textarea,
-.add-event-form select {
-  color: #000 !important;
-  background-color: rgba(0, 0, 0, 0.9) !important;
-  border: 1px solid rgba(0, 0, 0, 0.3) !important;
+.add-event-btn {
+  background: #4a6bff !important;
+  color: #fff !important;
+  font-weight: 700 !important;
+  padding: 10px 20px !important;
+  border-radius: 10px !important;
+  border: none !important;
 }
 
-/* FULLY VISIBLE PLACEHOLDER */
-.add-event-form input::placeholder,
-.add-event-form textarea::placeholder,
-.add-event-form select::placeholder {
-  color: rgba(0, 0, 0, 0.55) !important;
-  opacity: 1 !important;
-}
-
-
-
-
-/* Fix for Microsoft Edge */
-.add-event-form input:-ms-input-placeholder,
-.add-event-form textarea:-ms-input-placeholder {
-  color: rgb(255, 242, 242) !important;
-}
-
-
-/* FIX LABEL TEXT COLOR */
-.add-event-form label,
-.add-event-form .form-label {
-  color: #c50000 !important;      /* bright white */
-  font-weight: 600 !important;
-  letter-spacing: 0.3px;
-}
-
-/* 🔥 Force all labels inside Add Event form to be PURE WHITE */
-.add-event-form label,
-.add-event-form .form-label {
-    color: #ffffff !important;
-    font-weight: 600 !important;
-    z-index: 999 !important;
-    position: relative !important;
+.add-event-btn:hover {
+  background: #3654ec !important;
 }

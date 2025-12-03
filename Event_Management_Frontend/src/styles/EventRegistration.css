@@ -1,4 +1,3 @@
-/* FIX NAVBAR OVERLAP */
 .event-reg-wrapper {
   margin-top: 120px !important;
   width: 70%;
@@ -6,7 +5,6 @@
   padding-bottom: 50px;
 }
 
-/* PAGE TITLE */
 .event-reg-title {
   font-weight: 800;
   text-align: center;
@@ -16,7 +14,6 @@
   -webkit-text-fill-color: transparent;
 }
 
-/* GLASS CARD WRAPPER */
 .event-reg-card {
   background: rgba(255, 255, 255, 0.05);
   border-radius: 14px;
@@ -25,7 +22,6 @@
   backdrop-filter: blur(12px);
 }
 
-/* ENTIRE EVENT CANCEL BUTTON */
 .btn-cancel-event {
   background: #dc3545 !important;
   border: none;
@@ -39,7 +35,6 @@
   filter: brightness(1.1);
 }
 
-/* NO REGISTRATIONS */
 .no-attendees {
   padding: 20px;
   text-align: center;
@@ -47,7 +42,6 @@
   opacity: 0.8;
 }
 
-/* DARK TABLE */
 .event-table {
   background: rgba(30, 41, 59, 0.7);
   border-radius: 10px;
@@ -67,7 +61,6 @@
   background: rgba(255, 255, 255, 0.08);
 }
 
-/* CANCEL BUTTON IN TABLE */
 .btn-cancel-user {
   font-weight: 600;
   border-radius: 8px;

@@ -62,7 +62,13 @@ const Login = () => {
       localStorage.setItem("lastName", response.data.lastName);
       localStorage.setItem("role", response.data.role);
       localStorage.setItem("email", response.data.emailId);
-      localStorage.setItem("token", response.data.jwt);
+      localStorage.setItem("userName", response.data.firstName);
+      localStorage.setItem("isLoggedIn", true);
+     
+
+      window.dispatchEvent(new Event("storage"));
+
+
 
       alert("Login successful!");
       navigate("/");

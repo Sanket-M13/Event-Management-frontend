@@ -86,7 +86,6 @@ const AdminUsers = () => {
               <td>{u.active ? "Yes" : "No"}</td>
 
               <td className="d-flex gap-2">
-                {/* Edit Button */}
                 <Button
                   className="btn-edit"
                   onClick={() => openEditModal(u)}
@@ -94,7 +93,6 @@ const AdminUsers = () => {
                   Edit
                 </Button>
 
-                {/* Deactivate Button */}
                 <Button
                   className="btn-delete"
                   onClick={() => deactivateUser(u.id)}
@@ -108,7 +106,6 @@ const AdminUsers = () => {
         </tbody>
       </Table>
 
-      {/* ================= EDIT USER MODAL ================= */}
       <Modal show={showEdit} onHide={() => setShowEdit(false)} centered>
         <Modal.Header closeButton>
           <Modal.Title>Edit User</Modal.Title>

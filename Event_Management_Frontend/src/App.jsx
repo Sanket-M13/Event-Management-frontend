@@ -12,7 +12,7 @@ import AboutUs from "./pages/AboutUs";
 import ContactUs from "./pages/Contact";
 import AddEvent from "./pages/AddEvent";
 import ManageEvents from "./pages/ManageEvents";
-import Registrations from "./pages/Registrations";
+import Registrations from "./pages/ViewEventRegistrations";
 import RegisterEvent from "./pages/RegistrationEvent";
 import MyEvents from "./pages/MyEvents";
 
@@ -21,8 +21,8 @@ import AdminEvents from "./pages/admin/AdminEvents";
 import AdminManagers from "./pages/admin/AdminManagers";
 import ManagerEvents from "./pages/admin/ManagerEvents";
 
-import { ProtectedRoute } from "./components/ProtectedRoute";
 import { RoleRoute } from "./components/RoleRoute";
+import ViewEventRegistrations from "./pages/ViewEventRegistrations";
 
 function App() {
   return (
@@ -30,8 +30,8 @@ function App() {
       <AppNavbar />
 
       <Routes>
-        
-        {/* PUBLIC ROUTES */}
+
+        {/* Public Pages */}
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
@@ -40,35 +40,14 @@ function App() {
         <Route path="/about" element={<AboutUs />} />
         <Route path="/contact" element={<ContactUs />} />
 
-        {/* LOGIN REQUIRED ROUTES */}
-        <Route
-          path="/profile"
-          element={
-            <ProtectedRoute>
-              <Profile />
-            </ProtectedRoute>
-          }
-        />
+        {/* Profile & User Dashboard (no ProtectedRoute) */}
+        <Route path="/profile" element={<Profile />} />
+        <Route path="/my-events" element={<MyEvents />} />
 
-        <Route
-          path="/my-events"
-          element={
-            <ProtectedRoute>
-              <MyEvents />
-            </ProtectedRoute>
-          }
-        />
+        {/* Event Registration */}
+        <Route path="/events/:eventId/register" element={<RegisterEvent />} />
 
-        <Route
-          path="/events/:eventId/register"
-          element={
-            <ProtectedRoute>
-              <RegisterEvent />
-            </ProtectedRoute>
-          }
-        />
-
-        {/* ORGANIZER ONLY ROUTES */}
+        {/* Manager Routes */}
         <Route
           path="/organizer/events/add"
           element={
@@ -96,7 +75,16 @@ function App() {
           }
         />
 
-        {/* ADMIN ONLY ROUTES */}
+        <Route
+          path="/organizer/events/:eventId/registrations"
+          element={
+            <RoleRoute allowedRoles={["ROLE_MANAGER"]}>
+              <ViewEventRegistrations />
+            </RoleRoute>
+          }
+        />
+
+        {/* Admin Routes */}
         <Route
           path="/admin/users"
           element={

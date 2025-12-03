@@ -1,14 +1,20 @@
 import { Navigate } from "react-router-dom";
 
 export const RoleRoute = ({ allowedRoles, children }) => {
-  const token = localStorage.getItem("token");
-  const role = localStorage.getItem("role");
 
-  if (!token) {
-    return <Navigate to="/login" replace />;
-  }
+  const rawRole = localStorage.getItem("role") || "";
 
-  if (!allowedRoles.includes(role)) {
+  // Normalize the role → remove quotes, spaces, and convert to upper case
+  const role = rawRole.trim().replace(/[[\]"]/g, "").toUpperCase();
+
+
+
+  // Normalize allowed roles
+  const normalizedAllowed = allowedRoles.map(r =>
+    r.trim().replace(/[[\]"]/g, "").toUpperCase()
+  );
+
+  if (!normalizedAllowed.includes(role)) {
     return <Navigate to="/" replace />;
   }
 

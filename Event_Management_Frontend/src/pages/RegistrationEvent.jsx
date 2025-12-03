@@ -15,7 +15,6 @@ const RegisterEvent = () => {
   const [showPayment, setShowPayment] = useState(false);
   const [processingPayment, setProcessingPayment] = useState(false);
 
-  // Step 1: validate name + email and open fake payment popup
   const handleSubmit = (e) => {
     e.preventDefault();
 
@@ -27,11 +26,9 @@ const RegisterEvent = () => {
     setShowPayment(true);
   };
 
-  // Step 2: fake payment, then call backend to register
   const handleFakePayment = async () => {
     setProcessingPayment(true);
 
-    // simulate payment delay
     setTimeout(async () => {
       setProcessingPayment(false);
       setShowPayment(false);
@@ -51,8 +48,7 @@ const RegisterEvent = () => {
         navigate("/my-events");
 
 
-        // optional: go back to event details or events list
-        // navigate(`/user/event/${eventId}`);
+       
       } catch (err) {
         console.error(err);
         alert("❌ Something went wrong while registering for the event.");
@@ -92,7 +88,6 @@ const RegisterEvent = () => {
         </Button>
       </Form>
 
-      {/* Fake Payment Popup */}
       <Modal
         show={showPayment}
         onHide={() => (!processingPayment ? setShowPayment(false) : null)}
